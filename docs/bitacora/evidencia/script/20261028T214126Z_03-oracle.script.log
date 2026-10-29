@@ -1,0 +1,6 @@
+== Verificando variables de entorno en config/.env ==
+Archivo config/.env cargado correctamente.
+== Desplegando contenedor Oracle mediante Docker Compose ==
+== Estado de los contenedores ==
+NAME        IMAGE                                                      COMMAND                  SERVICE   CREATED              STATUS                           PORTS
+oracle-db   container-registry.oracle.com/database/express:21.3.0-xe   "/bin/bash -c $ORACL…"   oracle    About a minute ago   Up 1 second (health: starting)   0.0.0.0:1521->1521/tcp, [::]:1521->1521/tcp, 0.0.0.0:5500->5500/tcp, [::]:5500->5500/tcp

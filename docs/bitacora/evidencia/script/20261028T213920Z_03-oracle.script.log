@@ -1,0 +1,4 @@
+== Verificando variables de entorno en config/.env ==
+Archivo config/.env cargado correctamente.
+== Desplegando contenedor Oracle mediante Docker Compose ==
+== Estado de los contenedores ==

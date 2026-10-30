@@ -1,0 +1,12 @@
+
+ORDS: Release 26.3 Production on Fri Oct 30 18:09:11 2026
+
+Copyright (c) 2010, 2026, Oracle.
+
+Configuration:
+  /etc/ords/config
+
+Oracle REST Data Services - Non-Interactive Install
+
+Retrieving information.
+Connecting to database user: ORDS_PUBLIC_USER url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1

@@ -6,7 +6,7 @@ services:
       - "1521:1521"
       - "5500:5500"
     environment:
-      - ORACLE_PWD=${ORACLE_PASSWORD:-Oracle2026Lab}
+      - ORACLE_PWD=${ORACLE_PASSWORD:-CHANGE_ME}
     volumes:
       - oracledata:/opt/oracle/oradata
 

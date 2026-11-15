@@ -1,0 +1,13 @@
+total 551924
+drwxr-xr-x 3 miguelmarin miguelmarin      4096 Nov 15 22:02 .
+drwxr-xr-x 3 miguelmarin miguelmarin      4096 Nov 15 22:00 ..
+-rw-r--r-- 1 miguelmarin miguelmarin       328 Nov 15 22:02 SHA256SUMS
+drwxr-xr-x 2 miguelmarin miguelmarin      4096 Nov 15 22:00 extras
+-rw-r--r-- 1 miguelmarin miguelmarin         0 Nov 15 22:00 extras.lst
+-rw-r--r-- 1 miguelmarin miguelmarin      1555 Nov 15 22:00 inventario.txt
+-rw-r--r-- 1 miguelmarin miguelmarin       253 Nov 15 22:02 manifiesto.txt
+-rw-r--r-- 1 miguelmarin miguelmarin 565139675 Nov 15 22:02 volumen.tar.gz
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./extras.lst
+d217471dfefe3e0cfe150f7b1648995bca88f15b4e9d6f797a43f5a92e8a5182  ./inventario.txt
+a4f7fb4bfc197a242e370676c059baf353cf0b5174a178f6dcfb2f4c1f3bc4d8  ./manifiesto.txt
+8471f0ccc140a203edd2948105e25c6e4f4c21cea2c4b0c974e49fb8a11dc50b  ./volumen.tar.gz

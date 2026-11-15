@@ -1,0 +1,45 @@
+
+===== 1. Los tablespaces de la PDB: tipo, gestión de extensiones y de espacio en segmentos =====
+
+TABLESPACE_NAM CONTENTS 	     BIG EXTENTS    ASIGNACIO SSM    BLOCK_SIZE
+-------------- --------------------- --- ---------- --------- ------ ----------
+SYSAUX	       PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+SYSTEM	       PERMANENT	     YES LOCAL	    SYSTEM    MANUAL	   8192
+TBS_ACADEMIA   PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+TBS_CLINICA    PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+TBS_FINTECH    PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+TBS_LOGISTICA  PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+TBS_RETAIL     PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+TEMP	       TEMPORARY	     NO  LOCAL	    UNIFORM   MANUAL	   8192
+UNDOTBS1       UNDO		     YES LOCAL	    SYSTEM    MANUAL	   8192
+USERS	       PERMANENT	     YES LOCAL	    SYSTEM    AUTO	   8192
+
+===== 2. Segmentos de ADMIN_ACADEMIA (tablas, índices, LOB...) =====
+
+===== 3. Extensiones de ACA_ESTUDIANTES (AUTOALLOCATE: 64 KB, después 1 MB...) =====
+
+===== 4. La fila 101: su ROWID y su dirección física (DBMS_ROWID) =====
+(TBS_ACADEMIA es BIGFILE -predeterminado desde 23ai-: un solo archivo, relative_fno 1024
+por eso el bloque se decodifica con 'BIGFILE' y el archivo con ROWID_TO_ABSOLUTE_FNO)
+-- ¿Qué archivo del disco es ese número? ¿Y qué objeto es ese data_object_id?
+
+===== 5. Anatomía de la FILA 101 byte a byte: DUMP() muestra cómo guarda Oracle cada valor =====
+(Typ=2 NUMBER en formato interno de base 100 · Typ=1 VARCHAR2 en ASCII · Typ=180 TIMESTAMP · Len = bytes)
+-- Tamaño de la fila: suma de VSIZE de sus columnas frente a AVG_ROW_LEN de las estadísticas
+
+===== 6. ¿Cómo de llenos están los bloques de la tabla? (DBMS_SPACE.SPACE_USAGE, tablespaces ASSM) =====
+llenos (FULL)			  0
+0-25 % libre (FS1)		  0
+25-50 % libre (FS2)		  0
+50-75 % libre (FS3)		  0
+75-100 % libre (FS4)		  0
+sin formatear (bajo la HWM)	  0
+
+===== 7. Volcado REAL del bloque  del archivo  (ALTER SYSTEM DUMP DATAFILE ... BLOCK ...) =====
+ALTER SYSTEM DUMP DATAFILE  BLOCK
+                            *
+ERROR at line 1:
+ORA-00922: missing or invalid option
+Help: https://docs.oracle.com/error-help/db/ora-00922/
+
+

@@ -1,0 +1,18 @@
+
+===== 1. ACA_ESTUDIANTES: lo que dicen las estadísticas (r filas, R bytes por fila, b bloques) =====
+
+===== 2. Factor de bloqueo MEDIDO: filas por bloque, contando de verdad =====
+
+BLOQUES_CON_FILAS  MIN_FILAS MEDIA_FILAS  MAX_FILAS
+----------------- ---------- ----------- ----------
+                0
+
+===== 3. Factor de bloqueo CALCULADO y número de páginas (fórmulas de la Unidad 3, 3.1.7) =====
+DECLARE
+*
+ERROR at line 1:
+ORA-01476: divisor is equal to zero
+ORA-06512: at line 10
+Help: https://docs.oracle.com/error-help/db/ora-01476/
+
+

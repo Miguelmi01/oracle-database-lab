@@ -4,7 +4,7 @@ SQL Format Cleared
 
 INSTANCIA HOST_NAME      VERSION      ARRANQUE          DIAS_ARRIBA STATUS       DATABASE_STATUS  
 --------- -------------- ------------ ----------------- ----------- ------------ -----------------
-FREE      2a83b5d193c1   23.26.3.0.0  2026-11-15 20:34          .01 OPEN         ACTIVE           
+FREE      2a83b5d193c1   23.26.3.0.0  2026-11-15 21:02          .02 OPEN         ACTIVE           
 
 NAME                                 DBID CDB LOG_MODE     OPEN_MODE            FORCE_L FLASHBACK DATABASE_ROLE   
 ------------------------------ ---------- --- ------------ -------------------- ------- --------- ----------------
@@ -21,8 +21,8 @@ FREE                           1509902213 YES ARCHIVELOG   READ WRITE           
 NOMBRE                                           MB RES
 ---------------------------------------- ---------- ---
 Maximum SGA Size                               1529 No 
-Buffer Cache Size                              1072 Yes
-Shared Pool Size                                416 Yes
+Buffer Cache Size                              1056 Yes
+Shared Pool Size                                432 Yes
 Free SGA Memory Available                        16    
 Large Pool Size                                  16 Yes
 Fixed SGA Size                                    5 No 
@@ -33,15 +33,15 @@ Java Pool Size                                    0 Yes
 NOMBRE                                           MB
 ---------------------------------------- ----------
 aggregate PGA target parameter                  512
-total PGA allocated                             405
-maximum PGA allocated                           458
+total PGA allocated                             391
+maximum PGA allocated                           457
 
 ===== 3. PROCESOS: segundo plano (background) frente a servidores de sesiones =====
 
 TIPO                     PROCESOS_N
 ------------------------ ----------
-servidor / otros                  6
-segundo plano                    87
+servidor / otros                  7
+segundo plano                    85
 
 PROCESOS
 ------------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ ARC0 ARC1 CKPT DBRM DBW0 LGWR LREG MMNL MMON PMON PSP0 RECO SMON VKTM
 
 TIPO                       ARCHIVOS         MB
 ------------------------ ---------- ----------
-archived log (en disco)           3        162
+archived log (en disco)           4        362
 control file                      2         36
 datafile                         16       3984
 redo log (miembro)                3        600
@@ -70,20 +70,20 @@ diagnostic_dest                /opt/oracle
 
     CON_ID TABLESPACE_NAME   MB_USADOS  MB_MAXIMO  PCT_USADO ALERTA     
 ---------- ---------------- ---------- ---------- ---------- -----------
-         1 SYSTEM                 1057     939640         .1            
-         1 SYSAUX                  634     939240         .1            
-         1 USERS                     6     938577          0            
-         1 UNDOTBS1                 19   33554432          0            
+         1 SYSTEM                 1057     938899         .1            
+         1 SYSAUX                  635     938499         .1            
+         1 USERS                     6     937836          0            
+         1 UNDOTBS1                 20   33554432          0            
          1 TEMP                      0      32768          0            
+         3 TBS_ACADEMIA             22       1024        2.2            
          3 TBS_CLINICA               6       1024         .6            
          3 TBS_FINTECH               6       1024         .6            
          3 TBS_LOGISTICA             6       1024         .6            
          3 TBS_RETAIL                6       1024         .6            
-         3 TBS_ACADEMIA              6       1024         .6            
-         3 SYSAUX                  422     939020          0            
-         3 SYSTEM                  298     938870          0            
-         3 USERS                     8     938642          0            
-         3 UNDOTBS1                 31   33554432          0            
+         3 SYSAUX                  424     938279          0            
+         3 SYSTEM                  298     938129          0            
+         3 USERS                     8     937901          0            
+         3 UNDOTBS1                 53   33554432          0            
          3 TEMP                      0      32768          0            
 
     CON_ID TIPO                      SEGMENTOS         MB
@@ -92,24 +92,24 @@ diagnostic_dest                /opt/oracle
          1 LOBSEGMENT                      682        287
          1 INDEX                          2005        257
          1 TABLE PARTITION                 575         87
+         1 INDEX PARTITION                 560         44
          1 LOBINDEX                        682         43
-         1 INDEX PARTITION                 560         43
-         1 TYPE2 UNDO                       10         18
+         1 TYPE2 UNDO                       10         19
          1 ROLLBACK                          1          0
-         3 LOBSEGMENT                      377        196
-         3 INDEX                           829        149
-         3 TABLE                           629        145
+         3 LOBSEGMENT                      377        197
+         3 INDEX                           838        160
+         3 TABLE                           632        150
          3 LOBINDEX                        377         24
-         3 TABLE PARTITION                  89         23
-         3 TYPE2 UNDO                       10         18
-         3 INDEX PARTITION                 104         11
+         3 TABLE PARTITION                  91         24
+         3 TYPE2 UNDO                       10         19
+         3 INDEX PARTITION                 105         11
          3 ROLLBACK                          1          0
 
 ===== 6. ÍNDICES de los esquemas de negocio: cuántos, cuánto pesan y cuáles tienen mal factor de agrupamiento =====
 
 OWNER               INDICES     UNICOS ALTURA_MAX CF_CERCANO_A_FILAS NO_VALIDOS
 ---------------- ---------- ---------- ---------- ------------------ ----------
-ADMIN_ACADEMIA            9          7          1                  0          0
+ADMIN_ACADEMIA            9          7          2                  0          0
 ADMIN_CLINICA             8          6                             0          0
 ADMIN_FINTECH             6          3                             0          0
 ADMIN_LOGISTICA           6          5                             0          0
@@ -164,10 +164,11 @@ undo_tablespace                UNDOTBS1
 
 ERRORES_ORA_24H
 ---------------
-              5
+              8
 
 CODIGO          VECES ULTIMA_VEZ      
 ---------- ---------- ----------------
-ORA-00800           4 2026-11-15 20:34
+ORA-00800           6 2026-11-15 21:02
 ORA-65025           1 2026-11-15 20:40
+ORA-959             1 2026-11-15 21:20
 (Cada código se busca en https://docs.oracle.com/error-help/db/ora-NNNNN/ antes de tocar nada)
